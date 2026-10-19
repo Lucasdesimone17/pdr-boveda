@@ -64,6 +64,15 @@ Convencion, igual que en la nota del Obligatorio 1:
   - **Trampa:** los tres Dockerfile del ejemplo de la catedra, en `04_Async_04_Docker`, **son multi-stage**. No copiarlos tal cual: hay que reescribirlos en una sola etapa. Ver [[Ejemplos de codigo de asincronia de clase]].
   - El servidor async del ejemplo, `04_Async_03_00Server`, sirve de base, pero **hace un unico `ReadAsync` sin loop**: es el mismo bug del `Receive` parcial. EDISON ya lo resuelve en `NetworkHelper`, asi que conviene migrar ese helper en vez de copiar el ejemplo.
 - Mejora pedida en clase 08-10: terminar las aplicaciones con un `ReadLine` o `ReadKey`. En un contenedor, si la app sale, no se lee la consola; asi se puede hacer `docker attach` y ver el mensaje.
+- Clase 13-10 ([[Clase 2026-10-13 - Usuarios de RabbitMQ y Docker para el Obligatorio 2]]):
+  - **El cliente tambien va en contenedor**: *"antes pedian que el cliente estaba afuera"*.
+  - Receta de una etapa: compilar en Release, `COPY` de `bin/Release/net8.0` al `WORKDIR`, y `CMD` con `dotnet` y la dll del servidor.
+  - Configuracion por **variables de entorno** o `ENV`: IP **`0.0.0.0`**, puerto y carpetas. Las carpetas del host van como **bind mount** con `-v`.
+  - Con Compose el cliente encuentra al servidor **por nombre de contenedor**. Para `docker attach` hacen falta **`-it`**, o `stdin_open: true` y `tty: true`.
+  - Si la IA o Rider dockerizan, **casi seguro generan multi-stage**: resta puntos.
+  - **El release va igual en el repositorio.** Se puede entregar solo con Dockerfiles o con Compose, documentando la eleccion.
+  - *"¿Ya tienen pensado que base de datos van a usar? Deberian ahora"*. Para inicializar la base sirve el patron de scripts de arranque de Oracle del ejemplo de Base de Datos 2.
+  - **La devolucion de las defensas no se dio** en esta clase (as of 2026-10-19).
 
 **3. Base de datos (letra).** MySQL o la que se prefiera, **corriendo en Docker**. Se migra a la base el guardado de datos, **excepto las imagenes**.
 - Clase 08-10: recomienda **Oracle** porque ya se conoce de Base de Datos 2 y hay ejemplos de C# con Oracle.

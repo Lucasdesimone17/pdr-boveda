@@ -23,6 +23,10 @@ kanban-plugin: board
 
 ## 🔬 Processing
 
+- [ ] 🟡 **Obligatorio 2: decidir la base de datos y como inicializarla** · @{2026-10-20}
+	Clase 13-10: *"¿Ya tienen pensado que base de datos van a usar? Deberian ahora"*. Patron sugerido: scripts de arranque en el contenedor de la base. [[Clase 2026-10-13 - Usuarios de RabbitMQ y Docker para el Obligatorio 2]]
+- [ ] 🟡 **Obligatorio 2: cliente tambien en contenedor, sin multi-stage** · @{2026-10-29}
+	Release en `bin/Release`, `COPY` y `CMD`. Variables de entorno, `-it` o `stdin_open`/`tty` para `docker attach`, release igual en el repo. [[Clase 2026-10-13 - Usuarios de RabbitMQ y Docker para el Obligatorio 2]]
 - [ ] 🔴 **Obligatorio 2: subir el zip a Gestión antes de las 21:00** · @{2026-10-29}
 	PDF nuevo con el link al repo en la primera pagina, dentro de un zip (la letra se contradice en el formato: item 28). Max 40 MB, minimo 5 y maximo 15 puntos. Antes: Release en `main` y despues no tocar `main`. [[Obligatorio 2 - Upgrade asincrono y Docker de EDISON]]
 - [ ] 🔴 **Migrar EDISON de `Thread` a `Task` con `async`/`await`** · @{2026-10-18}

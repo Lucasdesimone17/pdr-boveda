@@ -118,6 +118,11 @@ Teórico único y extenso que va de la teoría de middleware a la práctica conc
 - **Request-reply con correlation id**: cola temporal en `ReplyTo`, GUID como correlation id y un diccionario de promesas en el cliente. **Varios servidores en la misma cola no exclusiva** dan escalabilidad horizontal. **Ack manual despues de responder.** Prefetch de 10 mensajes concurrentes. (stated)
 - El patron sirve en canales bidireccionales con callback (MOM, WebSocket). **No sirve en TCP pelado ni en HTTP**, que son pedido-respuesta. (stated)
 
+### 2026-10-13 ([[Clase 2026-10-13 - Usuarios de RabbitMQ y Docker para el Obligatorio 2]])
+- **En produccion no se usa `guest`.** Un admin crea exchanges, colas y bindings en la consola de RabbitMQ. La aplicacion usa usuarios con **permisos minimos**: el receptor con lectura sobre su cola y el sender con escritura sobre el exchange. Son tres regex: configuracion, escritura y lectura. (stated)
+- El `ConnectionFactory` lleva `UserName` y `Password`, y el codigo **ya no declara** exchange, cola ni binding. (stated)
+- Para el obligatorio *"no es necesario, pero si lo hacen, mas fino"*. Se puede publicar una imagen de RabbitMQ ya configurada. (stated)
+
 ## Connections
 - Contrapunto síncrono: [[Tema 5 - RPC y gRPC]] (ahí está la tabla MOM vs RPC, "postal vs teléfono").
 - Alternativa de bajo nivel: [[Tema 2 - Sockets y protocolos]]. Criterio de elección: [[Elegir tecnologia de comunicacion]].

@@ -48,6 +48,8 @@ Actas de las grabaciones del showcase de Vimeo **12367503**, con subtitulos auto
 - [[Clase 2026-09-24 - Middleware orientado a mensajes, RabbitMQ y AMQP]] - MOM, RabbitMQ y AMQP, mas **la logistica de la defensa del 1**.
 - 2026-09-29 - **sin acta**: el video no tiene subtitulos (as of 2026-10-13).
 - [[Clase 2026-10-08 - Letra del Obligatorio 2 y patron RPC sobre RabbitMQ]] - **lectura comentada de la letra del 2**, colas durables en RabbitMQ nuevo, direct y topic, y **request-reply con correlation id** y `TaskCompletionSource`.
+- [[Clase 2026-10-13 - Usuarios de RabbitMQ y Docker para el Obligatorio 2]] - RabbitMQ con **usuarios de permisos minimos**, teoria de Docker y la **receta sin multi-stage** del Obligatorio 2: cliente tambien en contenedor, variables de entorno, `-it` y release en el repo.
+- [[Clase 2026-10-15 - RPC, gRPC y Protocol Buffers]] - **arranque del Tema 5**: RPC generico, stubs y skeletons, MOM vs RPC, gRPC sobre HTTP/2, Protobuf, cuatro tipos de servicio y la plantilla gRPC de .NET.
 
 ## Literature - temas vigentes
 Cada nota de tema tiene un bloque `## Dicho en clase` con lo que agrego el docente, por fecha.

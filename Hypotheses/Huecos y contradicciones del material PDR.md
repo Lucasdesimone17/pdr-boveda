@@ -158,3 +158,9 @@ Fuente: `Sources/OBLIGATORIO/Obligatorio 2 Agosto 2026.pdf.md` y [[Obligatorio 2
 
 ### 29. La version nueva de RabbitMQ rompe los ejemplos del curso
 El material y los ejemplos declaran colas **no durables**, no exclusivas y sin autodelete. La ultima imagen de RabbitMQ en Docker Hub **ya no acepta esa combinacion**: esta deprecada y lanza excepcion. Por eso fallaron los ejemplos en clase el 24-09. El docente los arreglo poniendo **`durable: true`**. El comando del curso (`rabbitmq:4-management`, ver [[Tema 4 - Colas de mensajes y MOM]]) baja siempre la ultima version 4.x, asi que cualquier ejemplo viejo puede fallar igual. Mitigacion: declarar las colas durables. Fuente: [[Clase 2026-10-08 - Letra del Obligatorio 2 y patron RPC sobre RabbitMQ]]. (status: cerrado, anotado)
+
+### 30. Los numeros de campo del `.proto`, presentados como "solo un orden"
+En la clase del 15-10 la docente dijo que los numeros 1, 2 y 3 del ejemplo `Persona` *"lo unico que estan marcando es un orden, nada mas"*. En Protobuf esos numeros son **identificadores de campo**: viajan en el binario y no se pueden cambiar sin romper la compatibilidad. Es conocimiento general, no material del curso (confidence: high). En un parcial conviene decir que **identifican el campo**. Fuente: [[Clase 2026-10-15 - RPC, gRPC y Protocol Buffers]]. (status: abierto)
+
+### 31. "REST usa HTTP/3" en la comparacion gRPC vs REST
+En la clase del 15-10 la transcripcion dice *"gRPC usa HTTP/2 y REST usa HTTP/3"*. La tabla del material compara contra **HTTP/1.1** (ver la Critique de [[Tema 5 - RPC y gRPC]]). Probable error de lectura o de transcripcion. Para un parcial, usar la version del material. Fuente: [[Clase 2026-10-15 - RPC, gRPC y Protocol Buffers]]. (status: abierto)

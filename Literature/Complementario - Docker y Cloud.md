@@ -112,6 +112,18 @@ Cinco materiales sobre el mismo tema (dos PDF y tres PPTX), con solapamiento alt
 - Duplicación entre los cinco archivos sin indicación de cuál es la versión vigente.
 - No trata healthchecks ni límites de recursos más allá de mencionarlos en el corpus previo.
 
+## Dicho en clase
+
+### 2026-10-13 ([[Clase 2026-10-13 - Usuarios de RabbitMQ y Docker para el Obligatorio 2]])
+- Imagen estatica, como un disco clonado; contenedor como instancia en ejecucion. Docker rinde mucho mejor en Linux (namespaces y cgroups). (stated)
+- Seguridad: **`FROM scratch` con single file**, **no dejar el SDK en la imagen final** y **usuario no root**. (stated)
+- `--rm` y `-v` para encapsular operaciones que solo tocan las carpetas pasadas. (stated)
+- Dockerfile construye una imagen; **Compose coordina contenedores**, con precedencia (`depends_on`), redes y volumenes. (stated)
+- Ejemplo multi-stage `04-Async-04-Docker` (`base`, `build`, `publish` con **`UseAppHost=false`**, `final`). **No va en el Obligatorio 2, si en el 3.** (stated)
+- Version de una etapa: release en `bin/Release/net8.0`, `COPY` al `WORKDIR` y `CMD dotnet Server.dll`. Configuracion por **variables de entorno** o `ENV`, IP `0.0.0.0` y bind mounts para ver los archivos en el host. (stated)
+- **DNS interno de Docker**: el cliente encuentra al servidor por nombre de contenedor. **`docker attach` necesita `-it`**, que en Compose son `stdin_open: true` y `tty: true`. (stated)
+- Ejemplo de Compose de Base de Datos 2: Oracle XE en 1521 con scripts en `/opt/oracle/scripts/startup`, MongoDB y Node con `depends_on`. (stated)
+
 ## Connections
 - Se usa para levantar el broker de [[Tema 4 - Colas de mensajes y MOM]] y para desplegar los servicios de [[Tema 6 - APIs REST y WebSockets]].
 - Frecuencia y formato: [[Patrones de examen en Programacion de Redes]] · [[Errores caros en Programacion de Redes]].

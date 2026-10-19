@@ -81,10 +81,14 @@ Vimeo showcase **12367503**, un video por clase, con subtítulos autogenerados e
 | 2026-09-24 | 1h44 | Middleware orientado a mensajes, RabbitMQ y AMQP; logistica de la defensa | [[Clase 2026-09-24 - Middleware orientado a mensajes, RabbitMQ y AMQP]] |
 | 2026-09-29 | TBD | **Sin acta**: el video esta en el showcase pero sin subtitulos (as of 2026-10-13) | - |
 | 2026-10-08 | 1h41 | **Lectura de la letra del Obligatorio 2**; ejemplos de RabbitMQ (durable, direct, topic) y **patron request-reply con correlation id** | [[Clase 2026-10-08 - Letra del Obligatorio 2 y patron RPC sobre RabbitMQ]] |
+| 2026-10-13 | 1h42 | RabbitMQ con **usuarios de permisos minimos**; Docker: imagen, contenedor, `scratch`, Compose; **receta sin multi-stage del Obligatorio 2** | [[Clase 2026-10-13 - Usuarios de RabbitMQ y Docker para el Obligatorio 2]] |
+| 2026-10-15 | 1h43 | **Arranque del Tema 5**: RPC, ORB, stubs y skeletons, MOM vs RPC, gRPC sobre HTTP/2, Protobuf, cuatro tipos de servicio, plantilla gRPC de .NET | [[Clase 2026-10-15 - RPC, gRPC y Protocol Buffers]] |
 
 **Cobertura verificada al 2026-09-21**: el showcase tenía **9 videos** y había **9 actas**, una por video, del 18-08 al 17-09. **Actualizado al 2026-09-27**: el showcase de Vimeo **12367503** ahora tiene **11 videos** y pide **contraseña**; en `Clases/` hay **10 actas**, del 18-08 al 24-09, y **falta la del 22-09** (publicada en el showcase pero todavía sin ingestar). Las clases son **martes y jueves**. El unico martes/jueves del periodo sin clase es el **2026-08-25**, que **tampoco tiene video** en el showcase; lo mas probable es que no haya habido clase por ser feriado nacional (Declaratoria de la Independencia), pero **eso no esta confirmado por el material** - si aparece material de ese dia, falta el acta.
 
 **Actualizado al 2026-10-13**: el showcase tiene **13 videos**, del 18-08 al 08-10. Ya **no pide contraseña** desde Chrome. Hay **12 actas**: se ingestaron la del 22-09 y la del 08-10. **Falta la del 29-09**, que no tiene subtitulos: reintentar mas adelante. No hay video del 01-10 ni del 06-10, dias de defensa del Obligatorio 1.
+
+**Actualizado al 2026-10-19**: el showcase tiene **15 videos**, hasta el 15-10. Hay **14 actas**: se sumaron las del 13-10 y el 15-10. **La del 29-09 sigue sin subtitulos.**
 
 ## Material cargado en la bóveda
 
@@ -167,6 +171,7 @@ Entregado el 28-09. Release `v1.1` sobre `main` `0756597`, PDF de 19 paginas con
 El material de `Sources/ESTUDIO_PREVIO/` fue elaborado por otra sesión de trabajo, con la cuenta de Aulas de [[Juan Francisco Constantin Bonjour]], y su roadmap declara un equipo de estudio con [[Tomas Moreira]] e [[Ignacio Adorjan]] (as of 2026-08-18). La relación de ese equipo con el dueño de esta bóveda no consta en el material: no asumirla.
 
 ## Recent Activity
+- 2026-10-19 - Ingesta de las clases del **13-10** y del **15-10**. Novedades para el Obligatorio 2: **el cliente tambien va en contenedor**, el **release va igual en el repo**, la IA tiende a generar multi-stage y eso resta puntos, y conviene decidir ya la base de datos. La devolucion de las defensas no se dio. El 15-10 arranco el Tema 5. Items 30 y 31 nuevos en [[Huecos y contradicciones del material PDR]].
 - 2026-10-13 - Ingesta de las clases del **22-09** y del **08-10**, de la **letra oficial del Obligatorio 2** y de los ejemplos de codigo de Teams. Los ejemplos son `04_Async_ejs`, `ThreadExamples` y dos `.cs` de streams.
   - Notas nuevas: [[Obligatorio 2 - Upgrade asincrono y Docker de EDISON]], las dos actas y [[Ejemplos de codigo de asincronia de clase]].
   - Novedades del Obligatorio 2:

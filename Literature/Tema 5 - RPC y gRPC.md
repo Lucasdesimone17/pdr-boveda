@@ -140,6 +140,17 @@ Un teórico que hace historia primero (RPC, ORBs, los 7 retos) y recién despué
 - El docente aclaro que **"todavia no vimos RPC"**: *"la idea es parecida, pero es otra cosa"*. El tema propio viene despues. (stated)
 - Cancelar una llamada remota necesita **un mensaje de cancelacion** que dispare otro token del lado del servidor. Quedo sin implementar en el ejemplo. (stated)
 
+### 2026-10-15 ([[Clase 2026-10-15 - RPC, gRPC y Protocol Buffers]])
+- Arranca el tema. RPC hace que un procedimiento remoto **parezca una funcion local**, con un **contrato** que reemplaza el protocolo hecho a mano. Es **sincronico**, pero se integra en codigo asincronico devolviendo una promesa. (stated)
+- **La exclusion mutua del lado del servidor queda a cargo del programador**: cada solicitud corre en su hilo. (stated)
+- Excepciones: se capturan en el servidor y **se relanzan en el cliente como locales**. Serializacion **binaria little-endian**. (stated)
+- **MOM es el correo, RPC es instantaneo**: la contraparte tiene que estar activa. El balanceo en RPC necesita un **monitor transaccional**, ligado a la serializabilidad de Base de Datos 2. (stated)
+- gRPC: Google, **2015**, sobre **HTTP/2** (multiplexado, sitios virtuales, binario, headers en bloque), con TLS. **REST hacia afuera y gRPC hacia adentro**, como Netflix. (stated)
+- Cuatro tipos: **unario, server streaming, client streaming y bidireccional**. Server streaming sirve para avisos de progreso en vez de polling. (stated)
+- Desventaja remarcada: el contrato compilado **no acepta modificaciones**; el mismo `.proto` va en los dos lados. (stated)
+- Demo: plantilla **gRPC Service**, `greet.proto`, puerto **5000 HTTP sin HTTPS**, `csharp_namespace` que coincida, y **`GrpcServices="Server"` o `"Client"`** en el `.csproj`. El cliente queda para la clase siguiente. (stated)
+- **Dos dudas abiertas:** los numeros de campo del `.proto` presentados como *"solo un orden"* (item 30 de [[Huecos y contradicciones del material PDR]]) y *"REST usa HTTP/3"* (item 31).
+
 ## Connections
 - Contrapunto asíncrono: [[Tema 4 - Colas de mensajes y MOM]]. Contrapunto sobre HTTP: [[Tema 6 - APIs REST y WebSockets]].
 - Lo que gRPC evita hacer a mano: [[Tema 2 - Sockets y protocolos]]. Criterio de elección: [[Elegir tecnologia de comunicacion]].
